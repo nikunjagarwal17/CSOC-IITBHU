@@ -1,0 +1,3 @@
+{'UID': '1', 'username': 'user', 'password': 'password'}
+{'UID': '2', 'username': 'admin', 'password': 'admin'}
+{'UID': '3', 'username': 'username', 'password': 'password'}
