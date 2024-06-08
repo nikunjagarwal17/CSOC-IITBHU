@@ -6,7 +6,7 @@
 ![image](https://github.com/nikunjagarwal17/BanditOverTheWire/assets/144536875/4b8ed00d-4411-47bb-a089-96436e319936)
 
 
-[iamge here](https://gralhix.com/wp-content/uploads/2023/08/osintexercise003.webp)
+[image here](https://gralhix.com/wp-content/uploads/2023/08/osintexercise003.webp)
 
 so lets try to reverse search the image 
 
