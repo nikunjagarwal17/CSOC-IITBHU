@@ -75,7 +75,7 @@ Here is a article related to what **Euler totient** is
 
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/f9084672-84a8-45c5-8025-43e7d7cee517)
 
-So using the Euler's theorem we can use this script to calculate the same 
+Based on this we can use the following script to calculate the **Euler totient**
 
 ```python
 # Primes
