@@ -56,6 +56,7 @@ so to revert back this we have to xor it again (using properties of XOR)
 - XORing "1a31" again with "1a" gives us "1a2b" which is our original hex string
 
 so lets implement the same using the python also lets convert this hex to bytes 
+
 here is the script to do so
 
 ```python
