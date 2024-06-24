@@ -1,6 +1,9 @@
 # Week-3: The World of Web
 
 ## 2.1-Irish-Name-Repo 1
+[link](https://play.picoctf.org/practice/challenge/80?page=1&search=irish)
+
+
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/78ba1fb6-4bfe-49ae-8cbb-023683fbefa2)
 
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/c5cd368e-d3f7-40e3-a0d0-9468e2185572)
