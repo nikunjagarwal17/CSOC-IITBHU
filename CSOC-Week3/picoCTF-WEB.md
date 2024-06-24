@@ -55,6 +55,71 @@ finally got our flag.
 
 > Flag: picoCTF{succ3ss_@h3n1c@10n_790d2615}
 
+
+## Client-side-again
+[link](https://play.picoctf.org/practice/challenge/69)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/99906af7-824a-45a7-8441-4217bb7fa2d5)
+
+taking look into the website we got a login function.
+checking for the basic sql injection it doesnt reults anything.
+let us take a look back to the challenge name **Client Side** this hints us like something is hidden on out own side so lets first check for the source code of the site here we got a java script used for checking the password.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/430d6e23-ce88-4896-9b15-3e2e8492584c)
+
+let us read the script and reverse it to get the required password
+
+So the script is as follows:
+
+initialize a array to be used in the program
+```js
+var _0x5a46 = ['f49bf}', '_again_e', 'this', 'Password\x20Verified', 'Incorrect\x20password', 'getElementById', 'value', 'substring', 'picoCTF{', 'not_this'];
+```
+then the array is rotated to make it harder to read 
+```js
+(function(_0x4bd822, _0x2bd6f7) {
+    var _0xb4bdb3 = function(_0x1d68f6) {
+        while (--_0x1d68f6) {
+            _0x4bd822['push'](_0x4bd822['shift']());
+        }
+    };
+    _0xb4bdb3(++_0x2bd6f7);
+}(_0x5a46, 0x1b3));
+```
+it is rotated 0x1b3 i.e. 435 times wich is equivalent to 435 % 10 = 5 times since the length of array is 10.
+so the resultant array will be
+```js
+['getElementById', 'value', 'substring', 'picoCTF{', 'not_this', 'f49bf}', '_again_e', 'this', 'Password\x20Verified', 'Incorrect\x20password']
+```
+now this function is used to get the values at the particular index
+```js
+var _0x4b5b = function(_0x2d8f05, _0x4b81bb) {
+    _0x2d8f05 = _0x2d8f05 - 0x0;
+    var _0x4d74cb = _0x5a46[_0x2d8f05];
+    return _0x4d74cb;
+};
+```
+and finally the veryfy function check the values like this 
+
+- first 8 characters are picoCTF{.
+- characters from position 7 to 9 are {n.
+- characters from position 8 to 16 are not_this.
+- characters from position 3 to 6 are oCT.
+- characters from position 24 to 32 are not_this.
+- characters from position 6 to 11 are F{not.
+- characters from position 16 to 24 are again_e.
+- characters from position 12 to 16 are f49bf}.
+
+so the required string that we got is 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/73f81810-e024-417b-ab06-4c5a69da6523)
+
+> Flag: picoCTF{not_this_again_ef49bf}
+
+
+
+
+
 ## 6-Who are you?
 [link](https://play.picoctf.org/practice/challenge/142)
 
