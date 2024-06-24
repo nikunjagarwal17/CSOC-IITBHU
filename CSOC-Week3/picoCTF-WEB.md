@@ -1,4 +1,21 @@
-![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/2feffc42-9100-4e0c-95e2-a6f351860568)# Week-3: The World of Web
+# Week-3: The World of Web
+
+## 2.1-Irish-Name-Repo 1
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/78ba1fb6-4bfe-49ae-8cbb-023683fbefa2)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/c5cd368e-d3f7-40e3-a0d0-9468e2185572)
+
+going to the website provided looking around we can find a login system in the side menu now firstly we can try some SQl injection to get inot this using the simple username **'or'1'='1'--** as payload
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/4caa93f4-7015-45d8-964d-bfc54ac6c832)
+
+and we got it 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/35bab7aa-0664-4dd9-afd8-0a594448306a)
+
+> Flag: picoCTF{s0m3_SQL_c218b685}
+
+
+
 
 ## 4-Secrets
 [link](https://play.picoctf.org/practice/challenge/296?page=1&search=secrets)
