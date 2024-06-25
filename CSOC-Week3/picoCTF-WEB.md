@@ -1,8 +1,8 @@
 # Week-3: The World of Web
 
 ### Quick Links
-- [1.1 Web Gauntlet](#11-web-gauntlet)
-- [1.2 Web Gauntlet 2](12-web-gauntlet-2)
+- [1.1 Web Gauntlet]([#11-web-gauntlet](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#11-web-gauntlet))
+- [1.2 Web Gauntlet 2](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#12-web-gauntlet-2)
 
 
 
