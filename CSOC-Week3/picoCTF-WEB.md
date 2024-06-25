@@ -1,8 +1,19 @@
 # Week-3: The World of Web
 
 ### Quick Links
-- [1.1 Web Gauntlet]([#11-web-gauntlet](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#11-web-gauntlet))
+- [1.1 Web Gauntlet](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#11-web-gauntlet)
 - [1.2 Web Gauntlet 2](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#12-web-gauntlet-2)
+- [1.3 Web Gauntlet 3](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#13-web-gauntlet-3)
+- [2.1-Irish-Name-Repo 1](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#21-irish-name-repo-1)
+- [2.2-Irish-Name-Repo 2](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#22-irish-name-repo-2)
+- [2.3-Irish-Name-Repo 3](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#22-irish-name-repo-2)
+- [3-JaWT Scratchpad](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#3-jawt-scratchpad)
+- [4-Secrets](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#4-secrets)
+- [5-Client-side-again](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#5-client-side-again)
+- [6-Who are you?](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#6-who-are-you)
+
+
+<br/><br/><br/><br/>
 
 
 
@@ -246,7 +257,8 @@ lets first try to login as **admin**
 
 we can't login with the username as admin lets try something different.
 
-![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/asse.ts/144536875/56f0f8f4-87ca-4e33-b353-e9b5037f9d12)
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/499b30d7-0ec2-4e61-b3cc-a83944ead5da)
+
 
 we are getting a [JWT TOKEN](https://en.wikipedia.org/wiki/JSON_Web_Token) lets try to decode it using [this tool](https://jwt.io/)
 
@@ -269,6 +281,7 @@ now lets try to modify out JSON Web Token as we already know our key
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/169eaa57-4d07-4eb1-94ef-1e980095967c)
 
 New JSON Web Token
+
 ```eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4ifQ.gtqDl4jVDvNbEe_JYEZTN19Vx6X9NNZtRVbKPBkhO-s```
 
 lets try to send this newly generated JSON Web Token in our request 
