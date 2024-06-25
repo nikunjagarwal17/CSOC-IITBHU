@@ -11,6 +11,7 @@
 - [4-Secrets](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#4-secrets)
 - [5-Client-side-again](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#5-client-side-again)
 - [6-Who are you?](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#6-who-are-you)
+- [7-IntroToBurp](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#7-IntroToBurp)
 
 
 <br/><br/><br/><br/>
@@ -455,10 +456,29 @@ and finally we got our flag
 
 
 
+## 7-IntroToBurp
+[link](https://play.picoctf.org/practice/challenge/419)
 
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/0baaae41-6e1e-409b-8990-111eead83aa0)
 
+as mentioned lets try to open the website in burp suit
+we are given a registration portal in which we have to fill the details and then we are asked for a otp.
 
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/7614380d-57f7-44bb-87fe-53e992e52734)
 
+trying for the random number and checking for the request in the burpsuit
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/851d1008-33d1-49a5-8bc0-051ec585512d)
+
+lets send this request to the repeter to modify the request
+
+on trying for different attaks like sql injection, bruteforcing didn't get the result 
+on trying get a silly idea to rename the paremets to anything other 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/e93a5f7e-6d03-4b19-bf28-4164479ead34)
+
+and we got our flag, 
+Silly idea but that it is. :)
 
 
 
