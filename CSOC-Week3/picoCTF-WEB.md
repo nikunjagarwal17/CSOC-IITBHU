@@ -8,14 +8,91 @@
 
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/c5cd368e-d3f7-40e3-a0d0-9468e2185572)
 
-going to the website provided looking around we can find a login system in the side menu now firstly we can try some SQl injection to get inot this using the simple username **'or'1'='1'--** as payload
+going to the website provided looking around we can find a login system in the side menu now firstly we can try some SQl injection to get into this using the simple username **'or'1'='1'--** as payload
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/4caa93f4-7015-45d8-964d-bfc54ac6c832)
 
 and we got it 
 
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/35bab7aa-0664-4dd9-afd8-0a594448306a)
 
+we can also solve the following challenge using **curl**
+like this.
+here is the login page that we get we can check this using the command 
+```shell
+curl https://jupiter.challenges.picoctf.org/problem/39720/login.html
+```
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/3a7a398c-c64f-4646-9311-a276d8bc535d)
+
+now we can send username and password also debug parameters to login.php page using the following command
+```shell
+curl https://jupiter.challenges.picoctf.org/problem/39720/login.php --data "username='+or+1=1--&password=pass&debug=1"
+```
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/2cdae11a-5c91-4f4b-bb2a-2e379c640fde)
+here we got out flag.
+
+we can set the debug parameter to 1 to also get the sql query used in the result.
+
+
 > Flag: picoCTF{s0m3_SQL_c218b685}
+<br/>
+
+## 2.2-Irish-Name-Repo 2
+[link](https://play.picoctf.org/practice/challenge/59)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/63bf00ce-2717-42a8-8d2c-982159e19599)
+
+Again we are given with the same website and we have to perform a sqli injection to login into the admin panel,
+trying the solution of the last question didn't work obviously.
+lets try something new.
+
+we have to login with the username as **admin** as it is the most common username used for the admin user
+
+lets do the following injection username **admin'--** password **pass**.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/47ab5148-06d7-4dfc-9ecd-be0ae3d0a8bd)
+
+and we are done
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/e06769b8-f0b0-4966-95de-4a80c21434df)
+
+we can also solve the following challenge using **curl**
+like this.
+
+
+Simillarly we can also solve this using the **curl**
+
+firslty here is the page used for the loging portal.
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/45b372aa-fc50-42bb-b89a-fe127b1d550e)
+
+lets perform sql injection on the same parameters,
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/fe9928db-8b50-4d47-99f1-a1b1a5702790)
+
+> Flag: picoCTF{m0R3_SQL_plz_fa983901}
+
+## 2.3-Irish-Name-Repo 3
+
+here is the page used for the login portal.
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/ec6b5ed2-4892-4e3a-b6c1-1c93f69d1055)
+
+
+here we only have to enter the password lets try to perform dummy password to get whats actually is happening.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/5ba8bab8-2d9a-4d1e-ad17-3a52f0c4c4ef)
+
+we can clearly get taht we entered out password as **pass** but it is interpreted in the query as **cnff** it looks like it is shift cipher and shifted
+- p to c , a to n , and so on....
+
+so in order to break the shift cipher we can use out injection as reversed shifted so that when it shift automatically in the server the query get breaks.
+
+we can use the following injection "**' be 1=1--**" to login into the pertal
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/7a72bb4d-b13e-4c88-8b41-b0eb47611088)
+
+here we got our flag.
+
+> Flag: picoCTF{3v3n_m0r3_SQL_06a9db19}
+
 
 
 
