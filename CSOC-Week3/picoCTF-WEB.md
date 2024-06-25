@@ -1,5 +1,11 @@
 # Week-3: The World of Web
 
+### Quick Links
+- [1.1 Web Gauntlet](#11-web-gauntlet)
+- [1.2 Web Gauntlet 2](12-web-gauntlet-2)
+
+
+
 ## 1.1 Web Gauntlet
 
 [link](https://play.picoctf.org/practice/challenge/88)
@@ -219,6 +225,58 @@ we can use the following injection "**' be 1=1--**" to login into the pertal
 here we got our flag.
 
 > Flag: picoCTF{3v3n_m0r3_SQL_06a9db19}
+
+
+## 3-JaWT Scratchpad
+[link](https://play.picoctf.org/practice/challenge/25)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/e26c07e0-fad7-40e2-9171-44c7dc1db179)
+
+Opening the link in the browser 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/6135ea09-b5c9-42f5-8cd7-f41f09a5c6ea)
+
+lets try to connect to the website.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/cfa497ac-0022-4f1a-86ad-4fb56b3e13aa)
+
+lets first try to login as **admin** 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/80e7238d-2e7a-49f5-82ec-bd77532e4522)
+
+we can't login with the username as admin lets try something different.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/asse.ts/144536875/56f0f8f4-87ca-4e33-b353-e9b5037f9d12)
+
+we are getting a [JWT TOKEN](https://en.wikipedia.org/wiki/JSON_Web_Token) lets try to decode it using [this tool](https://jwt.io/)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/8ee887fe-adf3-414d-97b8-b3432c6d626d)
+
+JSON Web Token
+```eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZDRya200NzczciJ9.tDxUhvFeGEy_AvMAOTBTibmaE5aV4Nm08Pd1-JYB7cs```
+
+we can't directly modify the data : user to admin as it didn't works here coz of the signature verification.
+we cannot directly guess the signature but can use different techniques to bruteforce the signature key 
+I am using [jwt_tool](https://github.com/ticarpi/jwt_tool?tab=readme-ov-file) and reffering this [video](https://www.youtube.com/watch?v=2RKCDhH6dyA) it has a pretty well explaination of the same case.
+
+lets try to bruteforce the webtoken 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/5ad1d5ec-c102-4f92-9e5a-349b327f921a)
+
+here we got our secret key ```ilovepico``` 
+now lets try to modify out JSON Web Token as we already know our key 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/169eaa57-4d07-4eb1-94ef-1e980095967c)
+
+New JSON Web Token
+```eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4ifQ.gtqDl4jVDvNbEe_JYEZTN19Vx6X9NNZtRVbKPBkhO-s```
+
+lets try to send this newly generated JSON Web Token in our request 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/b4b81f40-f37f-4fe4-8cc4-acc2aeaaac59)
+
+here we got our flag.
+> Flag: picoCTF{jawt_was_just_what_you_thought_1ca14548}
 
 
 
