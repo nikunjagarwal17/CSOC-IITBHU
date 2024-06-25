@@ -1,5 +1,131 @@
 # Week-3: The World of Web
 
+## 1.1 Web Gauntlet
+
+[link](https://play.picoctf.org/practice/challenge/88)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/c187153a-0b0d-4b63-a3cb-6b8196bbeaeb)
+
+Here we are provided with two links let try to open both one by one.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/c0d6658c-4bee-4b00-ae02-4bf992197722)
+
+here is a login portal 
+and on the filter page 
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/58e3463e-068a-4b45-bbf3-4249772f9dd2)
+
+
+so basically we have to perform SQL injection on the login portal keeping in mind that we have not to use the filtered words that means we cannot use the words in filter in our injection.
+
+for the first round the filters are "or"
+
+using SQL injection as ```username=admin'-- password=pass```
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/670d46a9-d8cb-4a2e-8a35-f1037c64bca5)
+
+Now we are on the second round we can check the new filters for the round in the filters.php page.
+
+filters for second round "or and like = --" 
+using ```username=admin'/* password=pass```
+
+now we can't use the -- for commenting out the rest of the query but we can use /* */ for commenting out the query.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/6fcb16f1-ff5b-4ff6-88de-52cff0b9514c)
+
+filters for third round "or and = like > < --" 
+
+using SQL injection as ```username=admin'/* password=pass```
+
+we can still use /* for the comments.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/6ed69f50-7bd2-4350-b7f0-795550ab37ec)
+
+
+filters for fourth round "or and = like > < -- admin" 
+
+using SQL injection as ```username=a'||'dmin'/* password=pass```
+
+now we cannot use the admin word full at once so we have to figure out new way to put the admin word without using it actually
+to do this we can use the concatination operator **(||)** to join the different string that fully makes up the word admin.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/378b756d-1e7f-430f-80ec-3c44803b0ca3)
+
+filters for fifth round "or and = like > < -- union admin" 
+
+using SQL injection as ```username=a'||'dmin'/* password=pass``` 
+
+we can use the same logic that of the last one.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/6d4f06dd-ad78-493d-acf6-f4f8e17cadab)
+
+we can now checkout filter.php to get our flag
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/37dc7b84-d83a-4dc4-9024-7df57f4ead27)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/887240a7-e9e3-4030-b768-db4402550e00)
+
+> Flag: picoCTF{y0u_m4d3_1t_275cea1159781d5b3ef3f57e70be664a}
+
+
+## 1.2 Web Gauntlet 2
+
+[link](https://play.picoctf.org/practice/challenge/174)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/331c7c08-91f5-4795-bf5f-51637cd96c29)
+
+Now in this challenge we are provided with new filters and we have to perform the sqli injection
+
+Filters are "or and true false union like = > < ; -- /* */ admin"
+
+we can use ```username=a'||'dmin``` to get the admin username but we cannot use any of the commenting caracters to comment out the remaining query so now to have to figure out a way to bypass the password check.
+
+to bypass the password check we can use the wildcard to match the patterns using **glob** with **'*'** as wildcard patters to get the any password for any user with username as admin.
+
+```username=a'||'dmin password=' glob '*```
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/3b1bced0-8191-416f-8d0f-7e1a0f8556a9)
+
+this makes the final query as 
+```sql
+SELECT username, password FROM users WHERE username='a'||'dmin' AND password='' glob '*'
+```
+which means any user with username admin and with any password.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/afd469e2-ee71-4e10-b3d2-b09b14f8d0dc)
+
+here is out flag
+
+> Flag: picoCTF{0n3_m0r3_t1m3_d5a91d8c2ae4ce567c2e8b8453305565}
+
+
+
+## 1.3 Web Gauntlet 3
+
+[link](https://play.picoctf.org/practice/challenge/128)
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/21da835b-f991-4d85-9224-9ddbceec6847)
+
+Now we are given with some more strict filters lets checkout the filters first on the filters.php page.
+
+Filters are: "or and true false union like = > < ; -- /* */ admin"
+
+luckiely we can use the glob keyword here also since it is not filtered out.
+so using the same injection as of the previos challenge we can get out flag.
+
+```username=a'||'dmin password=' glob '*```
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/c7b559a0-2421-4ccc-850a-cf086687c43b)
+
+and it works 
+
+here is out flag.
+
+![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/5627eee6-2999-4411-aec0-7903e4bf502b)
+
+> Flag: picoCTF{k3ep_1t_sh0rt_fc8788aa1604881093434ba00ba5b9cd}
+
+
 ## 2.1-Irish-Name-Repo 1
 [link](https://play.picoctf.org/practice/challenge/80?page=1&search=irish)
 
@@ -72,9 +198,10 @@ lets perform sql injection on the same parameters,
 
 ## 2.3-Irish-Name-Repo 3
 
+[link](https://play.picoctf.org/practice/challenge/8)
+
 here is the page used for the login portal.
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/ec6b5ed2-4892-4e3a-b6c1-1c93f69d1055)
-
 
 here we only have to enter the password lets try to perform dummy password to get whats actually is happening.
 
