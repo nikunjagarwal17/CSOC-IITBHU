@@ -480,6 +480,7 @@ on trying get a silly idea to rename the paremets to anything other
 and we got our flag, 
 Silly idea but that it is. :)
 
+> Flag: picoCTF{#0TP_Bypvss_SuCc3$S_e1eb16ed}
 
 
 
