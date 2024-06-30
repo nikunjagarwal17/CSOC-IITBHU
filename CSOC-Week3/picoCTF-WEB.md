@@ -16,7 +16,12 @@
 - [8.2-Java Script Kiddie 2](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week3/picoCTF-WEB.md#82-java-script-kiddie-2)
 
 
-<br/><br/><br/><br/>
+<br/><br/>
+### Video Solutions uploaded on youtube.
+
+[Check Here](https://www.youtube.com/playlist?list=PLNyNRuhwNNlYue-zoiNoFCeBwHBKwOKoh)
+
+<br/><br/>
 
 
 
