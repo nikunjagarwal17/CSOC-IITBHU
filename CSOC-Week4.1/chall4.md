@@ -5,6 +5,7 @@
 Write a Keygen.
 
 So lets try to run the ELF executable file.
+
 ![image](https://github.com/nikunjagarwal17/CSOC-IITBHU/assets/144536875/a7fc370d-4108-4bd6-a78a-e98370cd3ce0)
 
 So in order to write a key gen we have to basically reverse the ELF executable and reimplement the algorithm to generate the key.
