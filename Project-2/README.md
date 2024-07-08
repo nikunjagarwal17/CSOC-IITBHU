@@ -235,8 +235,21 @@ Here is the Sample Output:
 - Then in the Code firstlty get the base pointer and then added the required offset to get to the desired values.
 - Then used functions to read and write the memory and thus hacking into the game :)
 
-References:
-CheatCode: [This Playlist](https://www.youtube.com/watch?v=ku6AtIY-Lu0&list=PLmqenIp2RQcg0x2mDAyL2MC23DAGcCR9b).
+
+Explaination of the code: 
+i have used the cheat engine to get the values of memory location at which the addresses are stored while finding of different variables we can see that the some variables are with the offset of ```<gta-sa.exe>``` which means that are with some offset related to the process. since we know that the every time we open our process the memory locations are different but the variable with the <gta-sa.exe> whill have the same offset every time no matter which time it is starting at is get attomatically fixed with the base address.
+
+we can use this base address to mkae our program more easy to use instead of use hardcoded momory locations that will be valid only for the current process.
+
+in the progarm I have firstly finded out the base address of the process then added the particular offset needed to get to that variable, finded out in the cheat engine.
+
+In cheat engine to find out a memory location of a certain variable firstly we have to go to the new scan then we have to select the value type and then search for the value then change that particualr value in the game and then rescan that particlar result with the new value repeting it few times we will lead to more and more smaller list of the memory locations.
+eventually leading to a single variable or sometime we can guess it out from a list of 4-5 variables.
+
+Note: changing of the unknown values can leads to crashing of the progarm.
+
+We can understand more in cheat code form [Here](https://www.youtube.com/watch?v=ku6AtIY-Lu0&list=PLmqenIp2RQcg0x2mDAyL2MC23DAGcCR9b).
+
 
 
 
