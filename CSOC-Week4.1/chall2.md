@@ -1,6 +1,6 @@
 # Reversing chall-2
 
-[link]()
+[link](https://github.com/nikunjagarwal17/CSOC-IITBHU/blob/main/CSOC-Week4.1/challs/chall_2)
 
 Find the password.
 
